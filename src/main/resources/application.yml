@@ -1,0 +1,9 @@
+server:
+  port: 8000
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://database-1.cw2m6xryal2i.ap-northeast-2.rds.amazonaws.com:3306
+    username: junil
+    password: 1q2w3e4r
