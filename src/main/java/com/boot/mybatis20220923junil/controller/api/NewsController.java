@@ -24,10 +24,13 @@ public class NewsController {
 
         log.info("{}", newsWriteReqDto);
 
-        News news = newsWriteReqDto.toEntity();
-        news.setNews_writer("김준일");
-        newsRepository.save(news);
+        News news = newsWriteReqDto.toEntity("김준일");
+        int result = newsRepository.save(news);
 
-        return ResponseEntity.ok(new CMRespDto<>(1, "새 글 작성 완료", null));
+        if(result == 0) {
+            return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "새 글 작성 실패", news));
+        }
+
+        return ResponseEntity.ok(new CMRespDto<>(1, "새 글 작성 완료", news));
     }
 }
