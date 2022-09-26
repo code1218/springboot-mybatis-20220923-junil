@@ -5,7 +5,12 @@
 
 <mapper namespace="com.boot.mybatis20220923junil.repository.UserRepository">
 
-    <insert id="save" parameterType="com.boot.mybatis20220923junil.domain.User">
+    <insert
+            id="save"
+            parameterType="com.boot.mybatis20220923junil.domain.User"
+            useGeneratedKeys="true"
+            keyProperty="user_code"
+    >
         insert into
             user_mst
         values (

@@ -1,5 +1,6 @@
 package com.boot.mybatis20220923junil.domain;
 
+import com.boot.mybatis20220923junil.dto.SignupRespDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,4 +16,14 @@ public class User {
     private String user_password;
     private String user_name;
     private String user_email;
+
+    public SignupRespDto toDto() {
+        return SignupRespDto.builder()
+                .userCode(user_code)
+                .userId(user_id)
+                .userPassword(user_password)
+                .userName(user_name)
+                .userEmail(user_email)
+                .build();
+    }
 }
