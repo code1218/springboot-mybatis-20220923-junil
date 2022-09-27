@@ -87,7 +87,7 @@ public class NewsController {
             for(NewsFile newsFile : newsFileList) {
                 newsFile.setNews_id(news.getNews_id());
                 log.info("NewsFile 객체: {}", newsFile);
-            }1
+            }
             result = newsRepository.saveFiles(newsFileList);
 
             if(result != newsFileList.size()) {
